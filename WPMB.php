@@ -17,8 +17,7 @@ ignore_user_abort(true);
 textarea{padding:7px 14px;height:312px;color:#2e4453;font-size:16px;font-weight:normal;line-height:1.5;border:1px solid#c8d7e1; 
 background-color:white;box-shadow:none;transition:all.15s ease-in-out;} 
 #brd{border:1px solid black;border-collapse:collapse;padding:5px}body{min-width:0;color:#444; 
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; 
-font-size:13px;} 
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-size:13px;} 
 .form{background:#ffffff;border:1px solid#d4dfe7;box-shadow:0px 1px 2px 0px#e7edf3;padding:20px 24px 24px;margin-left:auto;margin-right:auto;} 
 #FIN{font-size:14px;font-weight:600;margin-bottom:5px;color:#2e4453;line-height:24px;} 
 button{background:#00aadc;border-color:#0087be;color:white;border-style:solid;border-width:1px 1px 2px} 
